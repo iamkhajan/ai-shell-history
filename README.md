@@ -96,10 +96,5 @@ ah "how was payment service deployed"
 ah "show worktree for account"
 ```
 
-Probable credentials and
-long opaque values are excluded before history is sent to TypeSafe. Destructive
-commands such as recursive `rm` or `git reset --hard` are shown for review but
-never queued.
-
 Run `node src/ah-cli.ts --help` for configurable history, result, and confidence
 limits.
