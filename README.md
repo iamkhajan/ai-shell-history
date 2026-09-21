@@ -1,6 +1,8 @@
 # ai-shell-suggestions
 
-![Usage](assets/new-branch.png)
+![Setup](assets/setup.png)
+
+![Working](assets/demo.gif)
 
 
 ## What it is 
