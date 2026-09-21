@@ -71,23 +71,6 @@ git add -A && git commit -m ""
 docker compose up -d
 ```
 
-## grep
-
-`ag` finds repositories from a
-natural-language query. It scans the immediate children of `WORKSPACE_ROOT`,creates a lexical shortlist, then uses
-Jev to rank that shortlist, reject unrelated queries, and classify the requested
-action as `cd`, `code`, `open`, `web`, or `no_action`.
-
-The zsh plugin exposes both names after setup. Configure a persistent checkout
-root when you want to run it from anywhere:
-
-```zsh
-export WORKSPACE_ROOT=~/work
-
-ag "go to backend service" -> action cd , path to repo
-ag "open frontend app" -> action open , path to repo
-```
-
 ## History search
 
 `ah` finds a command by meaning in the 500 most recent distinct history entries.
