@@ -1,0 +1,29 @@
+{
+  "name": "ai-shell-suggestions",
+  "version": "0.1.0",
+  "description": "Fish-style zsh history autosuggestions ranked by Jev (TypeSafe)",
+  "scripts": {
+    "setup": "zsh zsh/install.zsh",
+    "doctor": "zsh zsh/install.zsh --check",
+    "test": "node --test 'src/**/*.test.ts'",
+    "typecheck": "tsc -p .",
+    "suggest": "node src/cli.ts",
+    "hcgrep": "node src/hcgrep-cli.ts",
+    "ag": "node src/hcgrep-cli.ts",
+    "ah": "node src/ah-cli.ts",
+    "test:install": "zsh test/install.zsh",
+    "test:e2e": "zsh test/e2e.zsh"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.1",
+    "typescript": "^7.0.2"
+  },
+  "bin": {
+    "ai-suggest": "./src/cli.ts"
+  }
+}

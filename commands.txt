@@ -1,0 +1,7 @@
+# git
+# new feature branch
+git checkout -b feature/COMPANY-
+# add commit
+git add -A && git commit -m ""
+# docker 
+docker compose up -d
