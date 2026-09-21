@@ -69,12 +69,10 @@ git add -A && git commit -m ""
 docker compose up -d
 ```
 
-## hcgrep
+## grep
 
-`ag` (also available as `hcgrep`) finds repositories from a
-natural-language query. It scans the immediate children of `WORKSPACE_ROOT`,
-or the current directory when that variable is unset, and joins local checkouts to the
-repository descriptions in `repos.json`, creates a lexical shortlist, then uses
+`ag` finds repositories from a
+natural-language query. It scans the immediate children of `WORKSPACE_ROOT`,creates a lexical shortlist, then uses
 Jev to rank that shortlist, reject unrelated queries, and classify the requested
 action as `cd`, `code`, `open`, `web`, or `no_action`.
 
@@ -84,27 +82,9 @@ root when you want to run it from anywhere:
 ```zsh
 export WORKSPACE_ROOT=~/work
 
-ag "go to cookai backend"
-ag "open cookai frontend"
-ag "show secret management on github"
-ag "account service" --for "auth handler"
+ag "go to backend service" -> action cd , path to repo
+ag "open frontend app" -> action open , path to repo
 ```
-
-`ag` queues the best command into the next zsh prompt when the query requests
-an action and both the repository match and top result are strong. Review the
-prefilled command, then press Enter. 
-Low-confidence actions and `no_action` queries show ranked repositories without
-producing a command. Override the action confidence gate with `--action-threshold`.
-
-Supported outputs are `cd`, VS Code's `code`, macOS `open`, and
-`gh repo view --web`. Explicit `code` or `vscode` requests use VS Code, explicit
-`open` requests use macOS, and terminal-work requests such as building or testing
-use `cd`. Queries without an action only show ranked repositories.
-Commands use paths relative to the current directory. Action routing is
-classified by Jev; path resolution, shell quoting, and command construction remain
-deterministic and restricted to the supported commands. Jev ranks repositories and files.
-
-
 
 ## History search
 
