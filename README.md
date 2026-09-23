@@ -42,14 +42,6 @@ To check an existing setup without changing it:
 
 `ai-shell-suggestions` attempts to replace or alternate to `zsh-autosuggestions`
 
-Setup detects active references and tells you which lines to change. Drop it
-from your plugin list, then rerun setup:
-
-```diff
--plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-+plugins=(git zsh-syntax-highlighting)
-```
-
 The installer then ensures `ai-shell-suggestions` is sourced last, after frameworks
 and other widget-wrapping plugins.
 
